@@ -1,0 +1,98 @@
+### HTML (index.html)
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Navigation Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav id="navbar">
+    <ul>
+      <li><a href="#section1">Home</a></li>
+      <li><a href="#section2">About</a></li>
+      <li><a href="#section3">Services</a></li>
+      <li><a href="#section4">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="content">
+    <section id="section1"><h2>Home</h2><p>Content for Home section.</p></section>
+    <section id="section2"><h2>About</h2><p>Content for About section.</p></section>
+    <section id="section3"><h2>Services</h2><p>Content for Services section.</p></section>
+    <section id="section4"><h2>Contact</h2><p>Content for Contact section.</p></section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+### CSS (styles.css)
+css
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  padding: 14px 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff6347;
+}
+
+section {
+  padding: 60px 20px;
+  margin-top: 50px;
+}
+
+#section1 { background-color: #f4f4f4; }
+#section2 { background-color: #e2e2e2; }
+#section3 { background-color: #d0d0d0; }
+#section4 { background-color: #bfbfbf; }
+
+
+### JavaScript (script.js)
+javascript
+document.addEventListener('DOMContentLoaded', function () {
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 50) {
+      navbar.style.backgroundColor = '#222';
+    } else {
+      navbar.style.backgroundColor = '#333';
+    }
+  });
+});
+
